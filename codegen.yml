@@ -1,0 +1,14 @@
+overwrite: true
+schema: "https://magentopractice.m2dev.invanos.net/kagento/graphql"
+documents: "graphql/operations/**/*.graphql"
+config:
+  namingConvention:
+    enumValues: keep
+generates:
+  graphql/__generated__/types_and_hooks.tsx:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      withHooks: true

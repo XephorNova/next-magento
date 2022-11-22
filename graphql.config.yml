@@ -1,0 +1,2 @@
+schema: "graphql/schema/m2.graphql"
+documents: "graphql/operations/**/*.{graphql,js,ts,jsx,tsx}"

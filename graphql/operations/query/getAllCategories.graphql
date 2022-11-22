@@ -1,0 +1,41 @@
+query getAllCategories {
+  categories(filters: {}, pageSize: 1, currentPage: 1) {
+    items {
+      available_sort_by
+      canonical_url
+      children_count
+      created_at
+      children {
+        id
+        name
+        children_count
+        url_path
+        url_key
+        children {
+          id
+          name
+          children {
+            id
+            name
+            url_path
+            url_key
+          }
+          url_path
+          url_key
+          children_count
+        }
+      }
+      name
+      url_path
+      url_key
+      product_count
+      updated_at
+    }
+    page_info {
+      current_page
+      page_size
+      total_pages
+    }
+    total_count
+  }
+}

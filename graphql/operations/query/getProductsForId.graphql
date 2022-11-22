@@ -1,0 +1,87 @@
+query getProductsForId($searchId: [String!], $currentPage: Int) {
+  products(
+    search: ""
+    filter: { category_id: { in: $searchId } }
+    pageSize: 9
+    currentPage: $currentPage
+    sort: {}
+  ) {
+    items {
+      id
+      attribute_set_id
+      name
+      sku
+      image {
+        url
+        label
+      }
+      __typename
+      price_range {
+        minimum_price {
+          regular_price {
+            value
+            currency
+          }
+        }
+      }
+      categories {
+        id
+      }
+      ... on ConfigurableProduct {
+        configurable_options {
+          id
+          label
+          position
+          use_default
+          attribute_code
+          values {
+            value_index
+            label
+            swatch_data {
+              value
+            }
+          }
+          product_id
+        }
+        variants {
+          product {
+            id
+            name
+            sku
+            attribute_set_id
+            image {
+              url
+              label
+            }
+            price_range {
+              minimum_price {
+                regular_price {
+                  value
+                  currency
+                }
+              }
+            }
+          }
+          attributes {
+            label
+            code
+            value_index
+          }
+        }
+      }
+    }
+    page_info {
+      current_page
+      page_size
+      total_pages
+    }
+    sort_fields {
+      default
+      options {
+        value
+        label
+      }
+    }
+    total_count
+  }
+}
