@@ -1,35 +1,50 @@
 import { Card, Text, Col, Row, Button } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
-import { ProductInterface } from "../../graphql/__generated__/types_and_hooks";
+import {
+  PriceRange,
+  ProductInterface,
+  useAddProductToCartMutation,
+} from "../../graphql/__generated__/types_and_hooks";
 
 const Product: React.FC<ProductInterface> = ({
+  name,
   image,
+  price_range,
   sku,
   id,
-  name,
-  price_range,
 }) => {
+  const {} = useAddProductToCartMutation({
+    variables: {
+      cartItems: [
+        {
+          parent_sku: sku || "asd",
+          quantity: 1,
+        },
+      ],
+    },
+  });
   return (
     <Card isPressable isHoverable css={{ w: "100%", h: "400px" }}>
       <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
         <Col>
           <Text size={12} weight="bold" transform="uppercase" color="#bafeAA">
-            New
+            {sku}
           </Text>
-          <Text h3 color="black">
+          {/* <Text h3 color="black">
             {name}
-          </Text>
+          </Text> */}
         </Col>
       </Card.Header>
       <Card.Body css={{ p: 0 }}>
         <Card.Image
+          autoResize
           showSkeleton
           src={image?.url || "https://loremflickr.com/640/360"}
           width="100%"
           height="100%"
           objectFit="cover"
-          alt="Card example background"
+          alt={image?.label || "Image Label Not defined"}
         />
       </Card.Body>
       <Card.Footer
@@ -45,13 +60,13 @@ const Product: React.FC<ProductInterface> = ({
         <Row>
           <Col>
             <Text color="#000" size={12}>
-              {price_range.maximum_price?.final_price.currency}
+              {name}
             </Text>
             <Text color="#000" size={12}>
-              {price_range.maximum_price?.final_price.value}
+              {price_range.minimum_price.regular_price.currency}
             </Text>
             <Text color="#000" size={12}>
-              {sku}
+              {price_range.minimum_price.regular_price.value}
             </Text>
           </Col>
           <Col>

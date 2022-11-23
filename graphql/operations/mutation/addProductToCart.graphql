@@ -1,0 +1,119 @@
+mutation addProductToCart($cartItems: [CartItemInput!]!) {
+  addProductsToCart(cartId: "string", cartItems: $cartItems) {
+    cart {
+      applied_coupons {
+        code
+      }
+      available_payment_methods {
+        code
+        title
+      }
+      billing_address {
+        firstname
+        lastname
+        street
+        region {
+          code
+          label
+          region_id
+        }
+        city
+        postcode
+        country {
+          code
+          label
+        }
+        telephone
+      }
+      email
+      gift_message {
+        from
+        message
+        to
+      }# Welcome to Altair GraphQL Client.
+# You can send your request using CmdOrCtrl + Enter.
+
+# Enter your graphQL query here.
+
+{
+  categoryList(filters: {}) {
+    children {
+      children_count
+      created_at
+      id
+      name
+      product_count
+      updated_at
+    }
+    id
+    product_count
+    updated_at
+    children_count
+    created_at
+    name
+  }
+}
+
+► (Send mutation)
+mutation {
+  createEmptyCart(input: {})
+}
+      id
+      is_virtual
+      items {
+        id
+        prices {
+          row_total_including_tax {
+            currency
+            value
+          }
+        }
+        product {
+          name
+          small_image {
+            url
+            label
+          }
+        }
+      }
+      prices {
+        grand_total {
+          currency
+          value
+        }
+      }
+      selected_payment_method {
+        code
+        purchase_order_number
+        title
+      }
+      shipping_addresses {
+        available_shipping_methods {
+          amount {
+            currency
+            value
+          }
+          available
+          carrier_code
+          carrier_title
+          error_message
+          price_excl_tax {
+            currency
+            value
+          }
+          price_incl_tax {
+            currency
+            value
+          }
+          method_title
+          method_code
+        }
+      }
+      total_quantity
+    }
+    user_errors {
+      code
+      message
+    }
+  }
+}

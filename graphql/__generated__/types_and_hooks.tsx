@@ -7299,6 +7299,18 @@ export type CreateKlarnaPaymentsSessionOutput = {
   payment_method_categories?: Maybe<Array<Maybe<Categories>>>;
 };
 
+export type AddProductToCartMutationVariables = Exact<{
+  cartItems: Array<CartItemInput> | CartItemInput;
+}>;
+
+
+export type AddProductToCartMutation = { __typename?: 'Mutation', addProductsToCart?: { __typename?: 'AddProductsToCartOutput', cart: { __typename?: 'Cart', email?: string | null, id: string, is_virtual: boolean, total_quantity: number, applied_coupons?: Array<{ __typename?: 'AppliedCoupon', code: string } | null> | null, available_payment_methods?: Array<{ __typename?: 'AvailablePaymentMethod', code: string, title: string } | null> | null, billing_address?: { __typename?: 'BillingCartAddress', firstname: string, lastname: string, street: Array<string | null>, city: string, postcode?: string | null, telephone: string, region?: { __typename?: 'CartAddressRegion', code?: string | null, label?: string | null, region_id?: number | null } | null, country: { __typename?: 'CartAddressCountry', code: string, label: string } } | null, gift_message?: { __typename?: 'GiftMessage', from: string, message: string, to: string } | null, items?: Array<{ __typename?: 'BundleCartItem', id: string, prices?: { __typename?: 'CartItemPrices', row_total_including_tax: { __typename?: 'Money', currency?: CurrencyEnum | null, value?: number | null } } | null, product: { __typename?: 'BundleProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'ConfigurableProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'DownloadableProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'GroupedProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'SimpleProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'VirtualProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } } | { __typename?: 'ConfigurableCartItem', id: string, prices?: { __typename?: 'CartItemPrices', row_total_including_tax: { __typename?: 'Money', currency?: CurrencyEnum | null, value?: number | null } } | null, product: { __typename?: 'BundleProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'ConfigurableProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'DownloadableProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'GroupedProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'SimpleProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'VirtualProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } } | { __typename?: 'DownloadableCartItem', id: string, prices?: { __typename?: 'CartItemPrices', row_total_including_tax: { __typename?: 'Money', currency?: CurrencyEnum | null, value?: number | null } } | null, product: { __typename?: 'BundleProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'ConfigurableProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'DownloadableProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'GroupedProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'SimpleProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'VirtualProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } } | { __typename?: 'SimpleCartItem', id: string, prices?: { __typename?: 'CartItemPrices', row_total_including_tax: { __typename?: 'Money', currency?: CurrencyEnum | null, value?: number | null } } | null, product: { __typename?: 'BundleProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'ConfigurableProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'DownloadableProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'GroupedProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'SimpleProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'VirtualProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } } | { __typename?: 'VirtualCartItem', id: string, prices?: { __typename?: 'CartItemPrices', row_total_including_tax: { __typename?: 'Money', currency?: CurrencyEnum | null, value?: number | null } } | null, product: { __typename?: 'BundleProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'ConfigurableProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'DownloadableProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'GroupedProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'SimpleProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } | { __typename?: 'VirtualProduct', name?: string | null, small_image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null } } | null> | null, prices?: { __typename?: 'CartPrices', grand_total?: { __typename?: 'Money', currency?: CurrencyEnum | null, value?: number | null } | null } | null, selected_payment_method?: { __typename?: 'SelectedPaymentMethod', code: string, purchase_order_number?: string | null, title: string } | null, shipping_addresses: Array<{ __typename?: 'ShippingCartAddress', available_shipping_methods?: Array<{ __typename?: 'AvailableShippingMethod', available: boolean, carrier_code: string, carrier_title: string, error_message?: string | null, method_title?: string | null, method_code?: string | null, amount: { __typename?: 'Money', currency?: CurrencyEnum | null, value?: number | null }, price_excl_tax: { __typename?: 'Money', currency?: CurrencyEnum | null, value?: number | null }, price_incl_tax: { __typename?: 'Money', currency?: CurrencyEnum | null, value?: number | null } } | null> | null } | null> }, user_errors: Array<{ __typename?: 'CartUserInputError', code: CartUserInputErrorType, message: string } | null> } | null };
+
+export type CreateEmptyCartForUserMutationVariables = Exact<{ [key: string]: never; }>;
+
+
+export type CreateEmptyCartForUserMutation = { __typename?: 'Mutation', createEmptyCart?: string | null };
+
 export type GetAllCategoriesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -7313,6 +7325,156 @@ export type GetProductsForIdQueryVariables = Exact<{
 export type GetProductsForIdQuery = { __typename?: 'Query', products?: { __typename?: 'Products', total_count?: number | null, items?: Array<{ __typename: 'BundleProduct', id?: number | null, attribute_set_id?: number | null, name?: string | null, sku?: string | null, image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null, price_range: { __typename?: 'PriceRange', minimum_price: { __typename?: 'ProductPrice', regular_price: { __typename?: 'Money', value?: number | null, currency?: CurrencyEnum | null } } }, categories?: Array<{ __typename?: 'CategoryTree', id?: number | null } | null> | null } | { __typename: 'ConfigurableProduct', id?: number | null, attribute_set_id?: number | null, name?: string | null, sku?: string | null, configurable_options?: Array<{ __typename?: 'ConfigurableProductOptions', id?: number | null, label?: string | null, position?: number | null, use_default?: boolean | null, attribute_code?: string | null, product_id?: number | null, values?: Array<{ __typename?: 'ConfigurableProductOptionsValues', value_index?: number | null, label?: string | null, swatch_data?: { __typename?: 'ColorSwatchData', value?: string | null } | { __typename?: 'ImageSwatchData', value?: string | null } | { __typename?: 'TextSwatchData', value?: string | null } | null } | null> | null } | null> | null, variants?: Array<{ __typename?: 'ConfigurableVariant', product?: { __typename?: 'SimpleProduct', id?: number | null, name?: string | null, sku?: string | null, attribute_set_id?: number | null, image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null, price_range: { __typename?: 'PriceRange', minimum_price: { __typename?: 'ProductPrice', regular_price: { __typename?: 'Money', value?: number | null, currency?: CurrencyEnum | null } } } } | null, attributes?: Array<{ __typename?: 'ConfigurableAttributeOption', label?: string | null, code?: string | null, value_index?: number | null } | null> | null } | null> | null, image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null, price_range: { __typename?: 'PriceRange', minimum_price: { __typename?: 'ProductPrice', regular_price: { __typename?: 'Money', value?: number | null, currency?: CurrencyEnum | null } } }, categories?: Array<{ __typename?: 'CategoryTree', id?: number | null } | null> | null } | { __typename: 'DownloadableProduct', id?: number | null, attribute_set_id?: number | null, name?: string | null, sku?: string | null, image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null, price_range: { __typename?: 'PriceRange', minimum_price: { __typename?: 'ProductPrice', regular_price: { __typename?: 'Money', value?: number | null, currency?: CurrencyEnum | null } } }, categories?: Array<{ __typename?: 'CategoryTree', id?: number | null } | null> | null } | { __typename: 'GroupedProduct', id?: number | null, attribute_set_id?: number | null, name?: string | null, sku?: string | null, image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null, price_range: { __typename?: 'PriceRange', minimum_price: { __typename?: 'ProductPrice', regular_price: { __typename?: 'Money', value?: number | null, currency?: CurrencyEnum | null } } }, categories?: Array<{ __typename?: 'CategoryTree', id?: number | null } | null> | null } | { __typename: 'SimpleProduct', id?: number | null, attribute_set_id?: number | null, name?: string | null, sku?: string | null, image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null, price_range: { __typename?: 'PriceRange', minimum_price: { __typename?: 'ProductPrice', regular_price: { __typename?: 'Money', value?: number | null, currency?: CurrencyEnum | null } } }, categories?: Array<{ __typename?: 'CategoryTree', id?: number | null } | null> | null } | { __typename: 'VirtualProduct', id?: number | null, attribute_set_id?: number | null, name?: string | null, sku?: string | null, image?: { __typename?: 'ProductImage', url?: string | null, label?: string | null } | null, price_range: { __typename?: 'PriceRange', minimum_price: { __typename?: 'ProductPrice', regular_price: { __typename?: 'Money', value?: number | null, currency?: CurrencyEnum | null } } }, categories?: Array<{ __typename?: 'CategoryTree', id?: number | null } | null> | null } | null> | null, page_info?: { __typename?: 'SearchResultPageInfo', current_page?: number | null, page_size?: number | null, total_pages?: number | null } | null, sort_fields?: { __typename?: 'SortFields', default?: string | null, options?: Array<{ __typename?: 'SortField', value?: string | null, label?: string | null } | null> | null } | null } | null };
 
 
+export const AddProductToCartDocument = gql`
+    mutation addProductToCart($cartItems: [CartItemInput!]!) {
+  addProductsToCart(cartId: "string", cartItems: $cartItems) {
+    cart {
+      applied_coupons {
+        code
+      }
+      available_payment_methods {
+        code
+        title
+      }
+      billing_address {
+        firstname
+        lastname
+        street
+        region {
+          code
+          label
+          region_id
+        }
+        city
+        postcode
+        country {
+          code
+          label
+        }
+        telephone
+      }
+      email
+      gift_message {
+        from
+        message
+        to
+      }
+      id
+      is_virtual
+      items {
+        id
+        prices {
+          row_total_including_tax {
+            currency
+            value
+          }
+        }
+        product {
+          name
+          small_image {
+            url
+            label
+          }
+        }
+      }
+      prices {
+        grand_total {
+          currency
+          value
+        }
+      }
+      selected_payment_method {
+        code
+        purchase_order_number
+        title
+      }
+      shipping_addresses {
+        available_shipping_methods {
+          amount {
+            currency
+            value
+          }
+          available
+          carrier_code
+          carrier_title
+          error_message
+          price_excl_tax {
+            currency
+            value
+          }
+          price_incl_tax {
+            currency
+            value
+          }
+          method_title
+          method_code
+        }
+      }
+      total_quantity
+    }
+    user_errors {
+      code
+      message
+    }
+  }
+}
+    `;
+export type AddProductToCartMutationFn = Apollo.MutationFunction<AddProductToCartMutation, AddProductToCartMutationVariables>;
+
+/**
+ * __useAddProductToCartMutation__
+ *
+ * To run a mutation, you first call `useAddProductToCartMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useAddProductToCartMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [addProductToCartMutation, { data, loading, error }] = useAddProductToCartMutation({
+ *   variables: {
+ *      cartItems: // value for 'cartItems'
+ *   },
+ * });
+ */
+export function useAddProductToCartMutation(baseOptions?: Apollo.MutationHookOptions<AddProductToCartMutation, AddProductToCartMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<AddProductToCartMutation, AddProductToCartMutationVariables>(AddProductToCartDocument, options);
+      }
+export type AddProductToCartMutationHookResult = ReturnType<typeof useAddProductToCartMutation>;
+export type AddProductToCartMutationResult = Apollo.MutationResult<AddProductToCartMutation>;
+export type AddProductToCartMutationOptions = Apollo.BaseMutationOptions<AddProductToCartMutation, AddProductToCartMutationVariables>;
+export const CreateEmptyCartForUserDocument = gql`
+    mutation createEmptyCartForUser {
+  createEmptyCart(input: {})
+}
+    `;
+export type CreateEmptyCartForUserMutationFn = Apollo.MutationFunction<CreateEmptyCartForUserMutation, CreateEmptyCartForUserMutationVariables>;
+
+/**
+ * __useCreateEmptyCartForUserMutation__
+ *
+ * To run a mutation, you first call `useCreateEmptyCartForUserMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCreateEmptyCartForUserMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [createEmptyCartForUserMutation, { data, loading, error }] = useCreateEmptyCartForUserMutation({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useCreateEmptyCartForUserMutation(baseOptions?: Apollo.MutationHookOptions<CreateEmptyCartForUserMutation, CreateEmptyCartForUserMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<CreateEmptyCartForUserMutation, CreateEmptyCartForUserMutationVariables>(CreateEmptyCartForUserDocument, options);
+      }
+export type CreateEmptyCartForUserMutationHookResult = ReturnType<typeof useCreateEmptyCartForUserMutation>;
+export type CreateEmptyCartForUserMutationResult = Apollo.MutationResult<CreateEmptyCartForUserMutation>;
+export type CreateEmptyCartForUserMutationOptions = Apollo.BaseMutationOptions<CreateEmptyCartForUserMutation, CreateEmptyCartForUserMutationVariables>;
 export const GetAllCategoriesDocument = gql`
     query getAllCategories {
   categories(filters: {}, pageSize: 1, currentPage: 1) {
